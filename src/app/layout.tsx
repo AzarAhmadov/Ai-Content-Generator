@@ -11,6 +11,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <ClerkProvider>
       <html lang="en">
+        <title>Content AI</title>
+        <link rel="icon" type="image/x-icon" href="/svgs/logo.svg" />
         <body className={roboto.className}>
           <main>
             {children}
