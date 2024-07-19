@@ -30,7 +30,7 @@ const Aside = () => {
                                     ${path === menu.path && 'text-white bg-gradient-to-tr from-blue-600 to-blue-400'}
                                     `}
                                     href={menu.path}>
-                                    <menu.icon  width={25} height={25}/>
+                                    <menu.icon width={25} height={25} />
                                     {menu.title}
                                 </Link>
                             </li>
