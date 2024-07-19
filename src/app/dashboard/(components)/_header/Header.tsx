@@ -10,8 +10,8 @@ const Header = () => {
                     <input className='w-full bg-transparent p-[12px] outline-none' type="text" placeholder='Search...' />
                     <Search />
                 </form>
-                <Link href={''} className='text-sm rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-3 py-2'>
-                    Join Membership just for $99/Month
+                <Link href={''} className='hover:scale-105 transition-all text-sm rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-3 py-2'>
+                    ✨ Join Membership just for $99/Month
                 </Link>
             </div>
         </header>
