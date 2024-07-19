@@ -20,7 +20,7 @@ const Aside = () => {
                     </h3>
                 </Link>
 
-                <nav className='p-4'>
+                <nav className='p-5'>
                     <ul className='flex flex-col gap-3'>
                         {NavLink.map((menu, index) => (
                             <li key={index}>
@@ -30,7 +30,7 @@ const Aside = () => {
                                     ${path === menu.path && 'text-white bg-gradient-to-tr from-blue-600 to-blue-400'}
                                     `}
                                     href={menu.path}>
-                                    <menu.icon width={25} height={25} />
+                                    <menu.icon  width={25} height={25}/>
                                     {menu.title}
                                 </Link>
                             </li>

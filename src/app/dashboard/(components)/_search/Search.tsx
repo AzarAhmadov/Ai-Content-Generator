@@ -3,7 +3,7 @@ import React from 'react'
 
 const Search = () => {
     return (
-        <div className='bg-gradient-to-r from-blue-500 to-indigo-600 py-7 rounded-md'>
+        <div className='bg-gradient-to-r from-blue-500 to-indigo-600 py-6 rounded-md'>
             <div className='flex flex-col text-center text-white'>
                 <h2 className='font-bold text-[28px] mb-1'>
                     Browse All Templates

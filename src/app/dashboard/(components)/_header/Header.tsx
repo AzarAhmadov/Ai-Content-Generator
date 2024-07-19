@@ -5,7 +5,7 @@ import React from 'react'
 const Header = () => {
     return (
         <header className='border-b border-[#00000017]'>
-            <div className="container h-[76px] flex items-center justify-between">
+            <div className="container px-[20px] h-[76px] flex items-center justify-between">
                 <form className='flex items-center justify-between border rounded-md w-[400px] pe-3'>
                     <input className='w-full bg-transparent p-[12px] outline-none' type="text" placeholder='Search...' />
                     <Search />
