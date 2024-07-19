@@ -11,7 +11,7 @@ const Aside = () => {
     const path = usePathname()
 
     return (
-        <aside className='min-w-[270px] border-r border-[#00000017]'>
+        <aside className='min-w-[270px] h-screen border-r border-[#00000017]'>
             <div className='fixed min-w-[270px] h-screen z-10'>
                 <Link href="/" className='border-b items-center gap-3 border-b-[#00000017] flex justify-center h-[77px]'>
                     <Image src={'svgs/logo.svg'} width={50} height={50} alt='Logo' />
@@ -30,7 +30,7 @@ const Aside = () => {
                                     ${path === menu.path && 'text-white bg-gradient-to-tr from-blue-600 to-blue-400'}
                                     `}
                                     href={menu.path}>
-                                    <menu.icon  width={25} height={25}/>
+                                    <menu.icon width={25} height={25} />
                                     {menu.title}
                                 </Link>
                             </li>
