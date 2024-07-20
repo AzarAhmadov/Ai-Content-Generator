@@ -1,12 +1,17 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Search from './(components)/_search/Search'
 import ServicesList from './(components)/_servicesList/ServicesList'
 
 const page = () => {
+
+    const [search, setSearch] = useState('')
+
     return (
         <>
-            <Search />
-            <ServicesList />
+            <Search setSearch={setSearch} />
+            <ServicesList search={search} />
         </>
     )
 }
