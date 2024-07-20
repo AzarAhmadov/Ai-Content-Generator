@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 export interface IServices {
     name: string
     desc: string
@@ -13,4 +15,12 @@ interface Form {
     field: string
     name: string
     required?: boolean
+}
+
+export interface ISearch {
+    search: string
+}
+
+export interface ISearchAction {
+    setSearch: Dispatch<SetStateAction<string>>
 }
