@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useMemo } from 'react'
 import ServicesCards from '../_servicesCards/ServicesCards'
 import { Templates } from '@/constants/constants'
 import { ISearch, IServices } from '@/types/type'
@@ -6,15 +6,13 @@ import Image from 'next/image'
 
 const ServicesList: FC<ISearch> = ({ search }) => {
 
-    const [filteredTemplates, setFilteredTemplates] = useState(Templates)
-
-    useEffect(() => {
+    const filteredTemplates = useMemo(() => {
         if (search) {
-            const filterTemplates = Templates.filter((item) => item.name.toLowerCase().trim().includes(search.toLowerCase().trim()))
-            setFilteredTemplates(filterTemplates)
-        } else {
-            setFilteredTemplates(Templates)
+            return Templates.filter((item) =>
+                item.name.toLowerCase().trim().includes(search.toLowerCase().trim())
+            )
         }
+        return Templates
     }, [search])
 
     return (
