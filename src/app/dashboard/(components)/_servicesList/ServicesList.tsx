@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC, useMemo, memo } from 'react'
 import ServicesCards from '../_servicesCards/ServicesCards'
 import { Templates } from '@/constants/constants'
 import { ISearch, IServices } from '@/types/type'
@@ -36,4 +36,4 @@ const ServicesList: FC<ISearch> = ({ search }) => {
     )
 }
 
-export default ServicesList
+export default memo(ServicesList)
