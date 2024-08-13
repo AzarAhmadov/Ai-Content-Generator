@@ -24,3 +24,7 @@ export interface ISearch {
 export interface ISearchAction {
     setSearch: Dispatch<SetStateAction<string>>
 }
+
+export interface Imobile {
+    mobile: boolean
+}
