@@ -1,5 +1,5 @@
 import React, { FC, useMemo, memo } from 'react'
-import ServicesCards from '../_servicesCards/ServicesCards'
+import ServicesCards from '../servicesCards/ServicesCards'
 import { Templates } from '@/constants/constants'
 import { ISearch, IServices } from '@/types/type'
 import Image from 'next/image'

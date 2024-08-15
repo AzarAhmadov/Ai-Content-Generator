@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import Search from './(components)/_search/Search'
-import ServicesList from './(components)/_servicesList/ServicesList'
+import Search from './(components)/search/Search'
+import ServicesList from './(components)/servicesList/ServicesList'
 
 const page = () => {
 

@@ -1,6 +1,10 @@
+'use client'
+
 import React from 'react'
 
-const page = () => {
+const page = ({ params }) => {
+
+
     return (
         <div>
             New Content Area

@@ -12,7 +12,7 @@ const AsideMobile: React.FC<Imobile> = ({ mobile }) => {
     const path = usePathname()
 
     return (
-        <aside className={`transition-opacity duration-300 ${mobile ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <aside className={`transition-all ${mobile ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
             <div className='fixed flex flex-col justify-between left-0 bg-white top-0 z-20 min-w-[300px] h-screen'>
                 <nav className='p-5'>
                     <ul className='flex flex-col gap-3'>

@@ -1,5 +1,5 @@
-import Aside from "./(components)/_aside/Aside";
-import Header from "./(components)/_header/Header";
+import Aside from "./(components)/aside/Aside";
+import Header from "./(components)/header/Header";
 
 export default function layout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     return (

@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-const AsideMobile = dynamic(() => import('../_asideMobilMenu/AsideMobile'), { ssr: false })
+const AsideMobile = dynamic(() => import('../asideMobilMenu/AsideMobile'), { ssr: false })
 
 const Header = () => {
 
