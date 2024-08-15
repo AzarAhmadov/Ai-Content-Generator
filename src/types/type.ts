@@ -28,3 +28,9 @@ export interface ISearchAction {
 export interface Imobile {
     mobile: boolean
 }
+
+export interface Iparams {
+    params: {
+        'template-slug': string
+    }
+}
