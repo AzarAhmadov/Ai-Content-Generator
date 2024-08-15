@@ -6,7 +6,9 @@ export interface IServices {
     category: string
     icon: string
     aiPrompt: string
+    field?: 'input' | 'textarea';
     slug: string
+    required?: boolean;
     form: Form[]
 }
 
@@ -27,10 +29,4 @@ export interface ISearchAction {
 
 export interface Imobile {
     mobile: boolean
-}
-
-export interface Iparams {
-    params: {
-        'template-slug': string
-    }
 }
