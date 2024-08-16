@@ -5,14 +5,14 @@ import { Imobile } from '@/types/type'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
 
-const AsideMobile: React.FC<Imobile> = ({ mobile }) => {
+const AsideMobile: React.FC<Imobile> = ({ toggle }) => {
 
-    const path = usePathname()
+    const path = usePathname();
 
     return (
-        <aside className={`transition-all ${mobile ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <aside className={`transition-all fixed top-0 -left-[100%] h-screen z-50 duration-500 ease-in-out transform ${toggle ? 'left-0 opacity-100 visible' : 'opacity-0 invisible'}`}>
             <div className='fixed flex flex-col justify-between left-0 bg-white top-0 z-20 min-w-[300px] h-screen'>
                 <nav className='p-5'>
                     <ul className='flex flex-col gap-3'>
