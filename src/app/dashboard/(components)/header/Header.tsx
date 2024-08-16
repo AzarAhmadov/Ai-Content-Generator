@@ -1,19 +1,16 @@
 'use client'
 
+import useToggle from '@/hook/useToggle'
 import { Search } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 const AsideMobile = dynamic(() => import('../asideMobilMenu/AsideMobile'), { ssr: false })
 
 const Header = () => {
 
-    const [mobile, setMobile] = useState(false)
-
-    const openMenu = () => {
-        setMobile(!mobile)
-    }
+    const [toggle, SetToggle, ref] = useToggle(false)
 
     return (
         <>
@@ -23,18 +20,18 @@ const Header = () => {
                         <input className='w-full bg-transparent p-[10px] md:p-[12px] outline-none' type="text" placeholder='Search...' />
                         <Search />
                     </form>
-                    <Link href={''} className='hover:scale-105 md:block hidden transition-all text-sm rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-3 py-2'>
+                    <Link href={''} className='hover:scale-105 lg:block hidden transition-all text-sm rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-3 py-2'>
                         ✨ Join Membership just for $99/Month
                     </Link>
-                    <button onClick={openMenu} className='md:hidden block'>
+                    <button onClick={SetToggle} className='lg:hidden block'>
                         <Image width={30} height={30} src="https://cdn-icons-png.flaticon.com/128/8917/8917404.png" alt='menu_bar' />
                     </button>
                 </div>
             </header>
 
-            {
-                <AsideMobile mobile={mobile} />
-            }
+            <div ref={ref}>
+                <AsideMobile toggle={toggle} />
+            </div>
         </>
     )
 }
