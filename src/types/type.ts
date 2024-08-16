@@ -28,5 +28,5 @@ export interface ISearchAction {
 }
 
 export interface Imobile {
-    mobile: boolean
+    toggle: boolean
 }
