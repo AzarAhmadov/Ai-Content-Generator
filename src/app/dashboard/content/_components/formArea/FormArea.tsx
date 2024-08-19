@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { IServices } from '@/types/type'
 import Image from 'next/image'
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useState, memo } from 'react'
 
 interface Props {
     selectedTemplate: IServices
@@ -32,7 +32,7 @@ const FormArea: React.FC<Props> = ({ selectedTemplate, userFormInput }) => {
         if (input.field == 'input') {
             return (
                 <div className='mb-6'>
-                    <Input onChange={handleInputChange} name={input.name} className='h-[40px]' />
+                    <Input required={input?.required} onChange={handleInputChange} name={input.name} className='h-[40px]' />
                 </div>
             )
         } else if (input.field == 'textarea') {
@@ -47,25 +47,27 @@ const FormArea: React.FC<Props> = ({ selectedTemplate, userFormInput }) => {
     }
 
     return (
-        <div className='border p-5'>
-            <div className='space-y-4'>
-                <Image src={icon} alt={selectedTemplate.name} width={60} height={60} />
-                <h3 className='font-bold text-[25px] text-[#2980b9]'>{name}</h3>
-                <p className='text-[#000000d7]'>{desc}</p>
+        <div className='border p-5 flex items-center rounded-md'>
+            <div>
+                <div className='space-y-4'>
+                    <Image src={icon} alt={selectedTemplate.name} width={60} height={60} />
+                    <h3 className='font-bold text-[25px] text-[#2980b9]'>{name}</h3>
+                    <p className='text-[#000000d7] text-[12px] md:text-[14px]'>{desc}</p>
+                </div>
+                <form onSubmit={onSubmitForm} className='mt-8'>
+                    {
+                        form.map((el, index) => (
+                            <div key={index}>
+                                <label className='mb-3 flex font-[500]'> {el.label} </label>
+                                {InputArea(el)}
+                            </div>
+                        ))
+                    }
+                    <Button type='submit' className='w-full text-md bg-gradient-to-tr from-blue-700 to-blue-400 text-white h-[45px]'> Generate Content </Button>
+                </form>
             </div>
-            <form onSubmit={onSubmitForm} className='mt-8'>
-                {
-                    form.map((el, index) => (
-                        <div key={index}>
-                            <label className='mb-3 flex font-[500]'> {el.label} </label>
-                            {InputArea(el)}
-                        </div>
-                    ))
-                }
-                <Button type='submit' className='w-full text-md bg-gradient-to-tr from-blue-700 to-blue-400 text-white h-[45px]'> Generate Content </Button>
-            </form>
         </div>
     )
 }
 
-export default FormArea
+export default memo(FormArea)
