@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { IServices } from '@/types/type'
@@ -16,13 +17,13 @@ const FormArea: React.FC<Props> = ({ selectedTemplate }) => {
         if (input.field == 'input') {
             return (
                 <div className='mb-6'>
-                    <Input />
+                    <Input className='h-[40px]' />
                 </div>
             )
         } else if (input.field == 'textarea') {
             return (
-                <div>
-                    <Textarea />
+                <div className='mb-5'>
+                    <Textarea  className='h-[100px]' />
                 </div>
             )
         } else {
@@ -48,6 +49,7 @@ const FormArea: React.FC<Props> = ({ selectedTemplate }) => {
                         </div>
                     ))
                 }
+                <Button className='w-full text-md bg-gradient-to-tr from-blue-700 to-blue-400 text-white h-[45px]'> Generate Content </Button>
             </form>
         </div>
     )
