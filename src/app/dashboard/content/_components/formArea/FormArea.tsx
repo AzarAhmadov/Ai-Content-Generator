@@ -1,29 +1,44 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { IServices } from '@/types/type'
 import Image from 'next/image'
-import React from 'react'
+import React, { FormEvent, useState } from 'react'
 
 interface Props {
     selectedTemplate: IServices
+    userFormInput: any
 }
 
-const FormArea: React.FC<Props> = ({ selectedTemplate }) => {
+const FormArea: React.FC<Props> = ({ selectedTemplate, userFormInput }) => {
 
     const { icon, desc, name, form } = selectedTemplate
+
+    const [formData, setFormData] = useState<any>()
+
+    const handleInputChange = (e: any) => {
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
+    }
+
+    const onSubmitForm = (e: FormEvent) => {
+        e.preventDefault()
+        userFormInput(formData)
+    }
 
     const InputArea = (input: any) => {
         if (input.field == 'input') {
             return (
                 <div className='mb-6'>
-                    <Input className='h-[40px]' />
+                    <Input onChange={handleInputChange} name={input.name} className='h-[40px]' />
                 </div>
             )
         } else if (input.field == 'textarea') {
             return (
                 <div className='mb-5'>
-                    <Textarea  className='h-[100px]' />
+                    <Textarea onChange={handleInputChange} name={input.name} className='h-[100px]' />
                 </div>
             )
         } else {
@@ -32,24 +47,22 @@ const FormArea: React.FC<Props> = ({ selectedTemplate }) => {
     }
 
     return (
-        <div>
+        <div className='border p-5'>
             <div className='space-y-4'>
                 <Image src={icon} alt={selectedTemplate.name} width={60} height={60} />
                 <h3 className='font-bold text-[25px] text-[#2980b9]'>{name}</h3>
                 <p className='text-[#000000d7]'>{desc}</p>
             </div>
-            <form className='mt-8'>
+            <form onSubmit={onSubmitForm} className='mt-8'>
                 {
                     form.map((el, index) => (
                         <div key={index}>
                             <label className='mb-3 flex font-[500]'> {el.label} </label>
-                            {
-                                InputArea(el)
-                            }
+                            {InputArea(el)}
                         </div>
                     ))
                 }
-                <Button className='w-full text-md bg-gradient-to-tr from-blue-700 to-blue-400 text-white h-[45px]'> Generate Content </Button>
+                <Button type='submit' className='w-full text-md bg-gradient-to-tr from-blue-700 to-blue-400 text-white h-[45px]'> Generate Content </Button>
             </form>
         </div>
     )
