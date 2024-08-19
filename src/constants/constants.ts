@@ -216,7 +216,7 @@ export const Templates = [
         ]
     },
     {
-        name: 'Instagram Hash Tag Generator',
+        name: 'Hash Tag Generator',
         desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
         icon: 'https://cdn-icons-png.flaticon.com/128/7045/7045432.png',
         category: 'blog',
