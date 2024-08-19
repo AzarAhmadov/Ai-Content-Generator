@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./tailwind.css";
 import { ClerkProvider } from '@clerk/nextjs'
 import { Poppins } from 'next/font/google'
 
