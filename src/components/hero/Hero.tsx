@@ -4,7 +4,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <section className='bg-gradient-to-r from-indigo-500 to-blue-500 h-[calc(100vh-116px)] md:h-[calc(100vh-126px)]'>
+        <section className='bg-gradient-to-r from-indigo-500 to-blue-500 h-[calc(100vh-115px)] md:h-[calc(100vh-135px)]'>
             <div className='container flex flex-col items-center gap-4 justify-center h-[calc(100vh-126px)]'>
                 <div className='relative text-center'>
 
