@@ -9,10 +9,10 @@ const page = () => {
     const [search, setSearch] = useState('')
 
     return (
-        <>
+        <main>
             <Search setSearch={setSearch} />
             <ServicesList search={search} />
-        </>
+        </main>
     )
 }
 
