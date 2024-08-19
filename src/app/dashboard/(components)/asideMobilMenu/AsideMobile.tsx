@@ -1,5 +1,6 @@
 'use client'
 
+import Logo from '@/components/common/logo/Logo'
 import { NavLink } from '@/constants/constants'
 import { Imobile } from '@/types/type'
 import Image from 'next/image'
@@ -31,12 +32,9 @@ const AsideMobile: React.FC<Imobile> = ({ toggle }) => {
                         ))}
                     </ul>
                 </nav>
-                <Link href="/" className='border-t items-center gap-3 flex justify-center h-[77px]'>
-                    <Image src={'/svgs/logo.svg'} width={40} height={40} alt='Logo' />
-                    <h3 className='text-[20px] font-medium bg-gradient-to-tr from-blue-700 to-blue-400 bg-clip-text text-transparent'>
-                        Content AI
-                    </h3>
-                </Link>
+                <figure className='border-t items-center gap-3 flex justify-center h-[77px]'>
+                    <Logo />
+                </figure>
             </div>
         </aside>
     )
