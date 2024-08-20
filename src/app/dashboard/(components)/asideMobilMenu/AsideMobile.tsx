@@ -3,12 +3,11 @@
 import Logo from '@/components/common/logo/Logo'
 import { NavLink } from '@/constants/constants'
 import { Imobile } from '@/types/type'
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { memo, useEffect } from 'react'
+import React, { memo } from 'react'
 
-const AsideMobile: React.FC<Imobile> = ({ toggle }) => {
+const AsideMobile: React.FC<Imobile> = ({ toggle, handleToggle }) => {
 
     const path = usePathname();
 
@@ -20,6 +19,7 @@ const AsideMobile: React.FC<Imobile> = ({ toggle }) => {
                         {NavLink.map((menu, index) => (
                             <li key={index}>
                                 <Link
+                                    onClick={handleToggle}
                                     className={`
                                     text-black transition-all flex items-center hover:text-[#fff] bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 gap-3 text-[18px] py-3 px-4 rounded-md
                                     ${path === menu.path && 'text-white bg-gradient-to-tr from-blue-600 to-blue-400'}

@@ -45,7 +45,7 @@ const Header = () => {
                 </div>
             </header>
 
-            <AsideMobile toggle={toggle} />
+            <AsideMobile handleToggle={handleToggle} toggle={toggle} />
         </>
     );
 };

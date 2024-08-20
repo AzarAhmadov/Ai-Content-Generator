@@ -29,4 +29,5 @@ export interface ISearchAction {
 
 export interface Imobile {
     toggle: boolean
+    handleToggle: () => void
 }
