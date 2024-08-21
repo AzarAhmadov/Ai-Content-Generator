@@ -38,7 +38,7 @@ const FormArea: React.FC<Props> = ({ selectedTemplate, userFormInput }) => {
         } else if (input.field == 'textarea') {
             return (
                 <div className='mb-5'>
-                    <Textarea onChange={handleInputChange} name={input.name} className='h-[100px]' />
+                    <Textarea onChange={handleInputChange} name={input.name} className='h-[100px] resize-none' />
                 </div>
             )
         } else {
